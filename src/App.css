@@ -1,0 +1,290 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", "Roboto", sans-serif;
+  color: white;
+}
+
+body {
+  background-color: #fff;
+}
+
+.header-landing {
+  background: url(./bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 40px 6px;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  font-family: "Rubik";
+  font-weight: 500;
+  z-index: 1;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+li {
+  list-style: none;
+}
+
+nav .links {
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-decoration: none;
+  font-weight: 400;
+  color: #fff;
+}
+
+nav .links:hover {
+  color: #eee;
+}
+
+.section-landing {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-block: 120px 0;
+  width: 100%;
+}
+
+.section-landing h1 {
+  font-family: "Urbanist";
+  font-weight: 300;
+  font-size: 6rem;
+}
+
+.section-landing p {
+  max-width: 520px;
+  font-size: 18px;
+  color: #eee;
+}
+
+.btn {
+  margin-top: 20px;
+  border: none;
+  background: none;
+  transition: 0.2s ease;
+}
+
+.btn a {
+  padding: 10px 32px;
+  cursor: pointer;
+  background-color: #21005D;
+  font-family: "Rubik";
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.section-landing a:hover {
+  color: #bbb;
+}
+
+.fig {
+  display: flex;
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0;
+}
+
+.fig a {
+  border: none;
+  font-size: 14px;
+}
+
+.section2-landing {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section2-landing figure {
+  max-width: 320px;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+figure div {
+  padding: 24px 48px 6px 48px;
+}
+
+figure h1 {
+  font-family: "Rubik";
+  font-weight: 400;
+  font-size: 20px;
+}
+
+figure p {
+  font-size: 14px;
+  font-family: "Rubik";
+  color: #D9D9D9;
+}
+
+figure a {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-size: 14px;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 10px 32px;
+  transition: 0.2s ease;
+}
+
+figure span {
+  display: flex;
+  align-items: center;
+  font-family: "Rubik";
+  color: #D9D9D9;
+}
+
+figure a:hover {
+  cursor: pointer;
+  gap: 16px;
+  padding: 10px 20px;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 1024px) {
+
+  .section-landing{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    flex-direction: center;
+    margin: 0 auto;
+  }
+  .section-landing h1 {
+    font-size: 4.5rem;
+  }
+
+  .section-landing p {
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
+  .section-landing .btn{
+    margin-block: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    left: -100%; /* Oculto inicialmente */
+    top: 0;
+    height: 100vh;
+    width: 80%;
+    max-width: 300px;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    justify-content: inherit;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 4rem;
+    transition: 0.3s ease;
+  }
+
+  nav ul{
+    text-align: right;
+    align-items: inherit;
+    font-size: 16px;
+    gap: 3rem;
+  }
+
+  nav.show {
+    left: 0; /* Mostrar menú */
+  }
+
+  .menu-btn {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .menu-btn span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 6px;
+    background-color: white;
+    transition: 0.3s ease;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .section-landing {
+    padding-top: 80px;
+  }
+
+  .section-landing h1 {
+    font-size: 3rem;
+  }
+
+  .section2-landing {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  figure{
+    text-align: center;
+
+  }
+
+  figure a{
+    align-items: center;
+    justify-content: center;
+  }
+
+  figure span{
+    display: none;
+  }
+
+}
+
+/* Estilos de transición para animar el botón de menú */
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
