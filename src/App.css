@@ -42,7 +42,7 @@ nav {
 
 .logo{
   font-family: "home-font";
-  font-size: 2rem;
+  font-size: 3rem;
   letter-spacing: 4px;
   font-weight: 100;
   color: #fffd47;
@@ -62,13 +62,101 @@ nav .links {
   cursor: pointer;
   transition: 0.2s ease;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 100;
   font-size: 1.1rem;
+  text-decoration: underline transparent;
+  text-underline-offset: 5px;
   color: #fff;
 }
 
 nav .links:hover {
   color: #eee;
+  text-decoration: underline;
+}
+
+nav .active-nav {
+  color: #eee;
+  text-decoration: underline;
+}
+
+/* Estilos para el modal */
+.model {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.model-content {
+  background-color: #fff;
+  padding: 20px 40px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  color: #333;
+  position: relative;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de cierre del modal */
+.model-content .x {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.model-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.model-content form label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.model-content form input,
+.model-content form textarea {
+  padding: 10px;
+  color: black;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.model-content form button {
+  padding: 10px;
+  border: none;
+  background-color: #fffd47;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.model-content form button:hover {
+  background-color: #fffc4786;
+}
+
+.menu-btn{
+  text-decoration: underline;
 }
 
 .section-landing {
@@ -84,9 +172,10 @@ nav .links:hover {
 
 .section-landing h1 {
   font-family: "home-font", serif;
-  font-weight: 300;
-  color: #fffd47;
-  font-size: 7rem;
+  font-weight: 100;
+  color: #eee;
+  text-shadow: 1px 3px 10px rgba(255, 244, 92, 0.1);
+  font-size: 6rem;
   margin-block: 6rem 2rem;
 }
 
@@ -94,7 +183,7 @@ nav .links:hover {
   max-width: 520px;
   margin-bottom: 2rem;
   font-size: 18px;
-  color: #eee;
+  color: #bbb;
 }
 
 .btn {
@@ -110,12 +199,13 @@ nav .links:hover {
   font-family: "Rubik";
   font-size: 18px;
   border: 1px solid #fffd47;
+  color: #bbb;
   text-decoration: none;
   transition: 0.2s ease;
 }
 
 .section-landing a:hover {
-  color: #fffd47;
+  color: #fffc4786;
 }
 
 .icons {
