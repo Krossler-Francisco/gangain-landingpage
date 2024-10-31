@@ -1,3 +1,8 @@
+@font-face{
+  font-family: home-font;
+  src: url(./Roxborough.ttf);
+  }
+
 * {
   padding: 0;
   margin: 0;
@@ -18,6 +23,10 @@ body {
   height: 100vh;
 }
 
+.navbar{
+  padding-inline: 20px;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -26,10 +35,17 @@ nav {
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
-  border-bottom: 1px solid #ddd;
   font-family: "Rubik";
   font-weight: 500;
   z-index: 1;
+}
+
+.logo{
+  font-family: "home-font";
+  font-size: 2rem;
+  letter-spacing: 4px;
+  font-weight: 100;
+  color: #fffd47;
 }
 
 ul {
@@ -46,7 +62,8 @@ nav .links {
   cursor: pointer;
   transition: 0.2s ease;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 1.1rem;
   color: #fff;
 }
 
@@ -57,18 +74,25 @@ nav .links:hover {
 .section-landing {
   max-width: 1280px;
   margin: 0 auto;
-  padding-block: 120px 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .section-landing h1 {
-  font-family: "Urbanist";
+  font-family: "home-font", serif;
   font-weight: 300;
-  font-size: 6rem;
+  color: #fffd47;
+  font-size: 7rem;
+  margin-block: 6rem 2rem;
 }
 
 .section-landing p {
   max-width: 520px;
+  margin-bottom: 2rem;
   font-size: 18px;
   color: #eee;
 }
@@ -83,10 +107,9 @@ nav .links:hover {
 .btn a {
   padding: 10px 32px;
   cursor: pointer;
-  background-color: #21005D;
   font-family: "Rubik";
   font-size: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid #fffd47;
   text-decoration: none;
   transition: 0.2s ease;
 }
@@ -131,7 +154,6 @@ figure div {
 }
 
 figure h1 {
-  font-family: "Rubik";
   font-weight: 400;
   font-size: 20px;
 }
@@ -171,6 +193,30 @@ figure a:hover {
   gap: 10px;
 }
 
+.flecha-row{
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  animation: godown 1s infinite;
+}
+
+
+
+@keyframes godown{
+  0%{
+    transform: translate(-50%, -50%) rotate(90deg) translateX(0px);
+  }
+  50%{
+    
+    transform: translate(-50%, -50%) rotate(90deg) translateX(6px);
+  }
+  100%{
+    
+    transform: translate(-50%, -50%) rotate(90deg) translateX(0px);
+  }
+}
+
 @media (max-width: 1024px) {
 
   .section-landing{
@@ -181,12 +227,14 @@ figure a:hover {
     flex-direction: center;
     margin: 0 auto;
   }
+
   .section-landing h1 {
     font-size: 4.5rem;
   }
 
   .section-landing p {
     font-size: 16px;
+    padding-inline: 20px;
     margin: 0 auto;
   }
 
@@ -251,27 +299,22 @@ figure a:hover {
   }
 
   .section-landing h1 {
-    font-size: 3rem;
+    margin-top: 6rem;
+    font-size: 4rem;
+  }
+
+  .section-landing .btn{
+    margin-top: 6rem;
+  }
+
+  .section-landing p{
+    color: white;
   }
 
   .section2-landing {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-  }
-
-  figure{
-    text-align: center;
-
-  }
-
-  figure a{
-    align-items: center;
-    justify-content: center;
-  }
-
-  figure span{
-    display: none;
   }
 
 }

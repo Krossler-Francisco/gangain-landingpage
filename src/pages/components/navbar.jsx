@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Ig from "./Instagram";
 import Logo from "./Logo";
 
 const Navbar = () => {
@@ -10,7 +9,7 @@ const Navbar = () => {
     };
 
     return (
-        <>
+        <section className="navbar">
             <div className={`menu-btn ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
                 <span></span>
                 <span></span>
@@ -25,7 +24,7 @@ const Navbar = () => {
                     <li><a className="links" href="./">Contacto</a></li>
                 </ul>
             </nav>
-        </>
+        </section>
     );
 };
 
