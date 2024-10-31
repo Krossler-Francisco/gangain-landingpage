@@ -1,0 +1,37 @@
+  .images-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.5em;
+  }
+  
+  .images-container h1 {
+    margin-top: 20px;
+    color: #848d62;
+    font-family: "home-font";
+    font-size: 4rem;
+  }
+  
+  .gallery {
+    display: grid;
+    margin: 3em 0;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: 1fr;
+    grid-gap: 1em;
+    grid-auto-flow: dense;
+  }
+  
+  .gallery figure {
+    display: flex;
+    margin: 0;
+  }
+  
+  .gallery img {
+    aspect-ratio: 1/2;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 0.5em;
+    flex: 1;
+    max-width: 100%;
+    object-fit: cover;
+  }

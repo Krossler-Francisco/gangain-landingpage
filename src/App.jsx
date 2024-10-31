@@ -1,4 +1,5 @@
 import './App.css'
+import Gallery from './pages/Gallery.jsx'
 import Header from './pages/Header.jsx'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
       <Header/>
+      <Gallery/>
     </>
   )
 }
