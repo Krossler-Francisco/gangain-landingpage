@@ -35,3 +35,11 @@
     max-width: 100%;
     object-fit: cover;
   }
+
+@media (max-width: 768px) {
+
+  .gallery img{
+    aspect-ratio: 2/3;
+  }
+
+}
