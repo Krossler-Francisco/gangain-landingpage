@@ -11,17 +11,23 @@ const Gallery = () => {
             "img": "./img2.webp"
         },
         {
-            "img": "./img1.png"
+            "img": "./img3.png"
         },
         {
-            "img": "./img1.png"
+            "img": "./img4.webp"
+        },
+        {
+            "img": "./img5.webp"
+        },
+        {
+            "img": "./img6.png"
         }
     ]
 
 
     return(
         <div class="images-container">
-  <header><h1>Gallery</h1></header>
+  <header><h1>Galería</h1></header>
   <main class="gallery">
     {images.map((image, id) => (
       <figure key={id}>
