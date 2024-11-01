@@ -4,6 +4,7 @@ import Logo from "./Logo";
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [showModel, setShowModel] = useState(false);
+    const [delayedShow, setDelayedShow] = useState(false); // Nueva variable de estado para la transición
     const [activeNav, setActiveNav] = useState("home");
     const [formData, setFormData] = useState({
         name: "",
@@ -20,7 +21,13 @@ const Navbar = () => {
     };
 
     const toggleModel = () => {
-        setShowModel(!showModel);
+        if (!showModel) {
+            setShowModel(true);
+            setTimeout(() => setDelayedShow(true), 100); // Añadir retraso de 100ms para mostrar el modal
+        } else {
+            setDelayedShow(false);
+            setTimeout(() => setShowModel(false), 300); // Asegura que el modal desaparece con la transición
+        }
     };
 
     const handleChange = (e) => {
@@ -65,14 +72,14 @@ const Navbar = () => {
             <nav className={menuOpen ? "show" : ""}>
                 <Logo />
                 <ul>
-                    <li><a onClick={() => handleNavClick("home")} className={`links ${activeNav === "home" ? "active-nav" : ""}`} href="./">Home</a></li>
-                    <li><a onClick={() => handleNavClick("products")} className="links" href="./">Productos</a></li>
+                    <li><a className="links" href="./">Home</a></li>
+                    <li><a className="links" href="#products">Productos</a></li>
                     <li><a className="links" href="https://www.mercadolibre.com.ar/pagina/gangain">Tienda Oficial</a></li>
                     <li><button onClick={toggleModel} className="links no-btn">Contacto</button></li>
                 </ul>
             </nav>
             {showModel && (
-                <div className="model">
+                <div className={`model ${delayedShow ? "show" : ""}`}>
                     <div className="model-content">
                         <form onSubmit={handleSubmit}>
                             <label htmlFor="name">Nombre:</label>

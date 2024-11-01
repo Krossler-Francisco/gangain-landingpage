@@ -51,13 +51,13 @@ nav {
   color: #fffd47;
 }
 
-ul {
+.navbar ul {
   display: flex;
   align-items: center;
   gap: 3rem;
 }
 
-li {
+.navbar li {
   list-style: none;
 }
 
@@ -94,6 +94,14 @@ nav .active-nav {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.model.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .model-content {
@@ -264,7 +272,7 @@ nav .active-nav {
     transition: 0.3s ease;
   }
 
-  nav ul{
+  .navbar ul{
     text-align: right;
     align-items: inherit;
     font-size: 16px;
@@ -293,7 +301,7 @@ nav .active-nav {
     transition: 0.3s ease;
   }
 
-  ul {
+  .navbar ul {
     flex-direction: column;
     gap: 1.5rem;
   }

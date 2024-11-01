@@ -35,7 +35,7 @@ const Gallery = () => {
       className="gallery-container"
     >
       <div className="images-container">
-        <header><h1>Galería</h1></header>
+        <header id="products"><h1>Productos</h1></header>
         <main className="gallery">
           {images.map((image, id) => (
             <figure key={id}>

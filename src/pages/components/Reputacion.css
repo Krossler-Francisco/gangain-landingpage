@@ -1,0 +1,54 @@
+.reputacion {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 2rem 1rem 1rem 1rem;
+    text-align: center;
+    border-radius: 0.5em;
+  }
+  
+  .reputacion h1 {
+    margin-block: 1rem 4rem;
+    color: #848d62;
+    font-family: "home-font";
+    font-size: 4rem;
+  }
+
+  .reputacion h2{
+    color: rgba(0, 0, 0, 0.62);
+    margin-bottom: 1rem;
+    font-family: "rubik";
+    font-size: 2rem;
+  }
+
+  .reputacion p{
+    color: rgb(50, 50, 50);
+    font-family: "rubik";
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  .reputacion-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .reputacion-icons figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .img-container{
+    margin-bottom: .2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 120px;
+  }

@@ -1,3 +1,27 @@
+html{
+    scroll-behavior: smooth;
+}
+
 .nopointer{
     pointer-events: none;
+}
+
+.whatsapp{
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 4rem;
+    height: 4rem;
+    background: #25d366;
+    padding: .4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+}
+
+.whatsapp:hover{
+    scale: 1.1;
 }
