@@ -17,7 +17,7 @@ function App() {
       <Reputacion/>
       <Destaques/>
       <Links/>
-      <a href="https://wa.me/551134732744" target="_blank">
+      <a href="https://wa.me/551134732744" aria-label="Contactar por whatsapp" target="_blank">
         <Whatsapp/>
       </a>
     </>
