@@ -1,14 +1,6 @@
-.gallery-container {
-  background: url("https://static.vecteezy.com/system/resources/thumbnails/028/790/475/original/simple-white-luxury-ornamental-rotating-mandala-line-looping-animation-for-background-video.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
 
 .images-container {
-  max-width: 900px;
+  max-width: 880px;
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
@@ -109,17 +101,13 @@
 }
 
 @media (max-width: 768px) {
-  .gallery-container {
-    background: url("https://th.bing.com/th/id/OIP.Shiots3bDtIbgjCfsQRSHgHaKe?w=664&h=939&rs=1&pid=ImgDetMain");
-  }
-
   .gallery img {
     aspect-ratio: 3/4;
   }
 
   .gallery {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    grid-gap: .2em;
+    grid-gap: .5em;
   }
 
   .img-container-modal{

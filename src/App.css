@@ -12,7 +12,10 @@
 }
 
 body {
-  background-color: #f5f9f6;
+  background: url("./background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .header-landing {
@@ -174,16 +177,17 @@ nav .active-nav {
   font-family: "home-font", serif;
   font-weight: 100;
   color: #eee;
-  text-shadow: 1px 3px 10px rgba(255, 244, 92, 0.1);
-  font-size: 6rem;
+  /*text-shadow: 1px 3px 10px rgba(255, 244, 92, 0.1);*/
+  text-shadow: 1px 3px 8px rgba(0, 0, 0, 0.3);
+  font-size: 6.4rem;
   margin-block: 6rem 2rem;
 }
 
 .section-landing p {
-  max-width: 520px;
+  max-width: 550px;
   margin-bottom: 2rem;
-  font-size: 18px;
-  color: #bbb;
+  font-size: 20px;
+  color: #ccc;
 }
 
 .btn {
@@ -229,11 +233,11 @@ nav .active-nav {
   }
 
   .section-landing h1 {
-    font-size: 4.5rem;
+    font-size: 4.8rem;
   }
 
   .section-landing p {
-    font-size: 16px;
+    font-size: 22px;
     padding-inline: 20px;
     margin: 0 auto;
   }
