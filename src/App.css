@@ -298,6 +298,10 @@ nav .active-nav {
     gap: 1.5rem;
   }
 
+  .header-landing {
+    height: 95vh;
+  }
+
   .section-landing {
     padding-top: 80px;
   }
