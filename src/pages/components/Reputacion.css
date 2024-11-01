@@ -52,3 +52,10 @@
     height: 140px;
     width: 120px;
   }
+
+  @media (max-width: 768px) {
+    .reputacion-icons{
+      flex-direction: column;
+      gap: 0;
+    }
+  }
