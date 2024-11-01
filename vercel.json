@@ -2,15 +2,14 @@
     "version": 2,
     "builds": [
       {
+        "src": "vite.config.js",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "dist"
+        }
+      },
+      {
         "src": "api/**/*.js",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "public/**/*",
-        "use": "@vercel/static"
-      },
-      {
-        "src": "pages/**/*.js",
         "use": "@vercel/node"
       }
     ],
@@ -21,7 +20,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "/pages/$1"
+        "dest": "/index.html"
       }
     ]
   }
