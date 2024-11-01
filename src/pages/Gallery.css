@@ -115,11 +115,14 @@
 
   .gallery img {
     aspect-ratio: 3/4;
-    object-fit: cover;
   }
 
   .gallery {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     grid-gap: .2em;
+  }
+
+  .img-container-modal{
+    width: 100vw;
   }
 }
