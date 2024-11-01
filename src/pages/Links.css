@@ -15,21 +15,27 @@
 
 .links-section span{
     color: black;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     gap: .4rem;
 }
 
 .links-section a{
-    text-decoration: none;
-    color: rgb(50, 50, 50);
-    font-size: 1.5rem;
+    text-decoration: underline rgba(0, 0, 0, 0);
+    color: rgba(50, 50, 50, 0.6);
+    font-size: 1.2rem;
     transition: .2s ease-in-out;
+
+}
+
+.links-section a:hover{
+    text-decoration: underline;
 }
 
 .links-icons a:hover{
     scale: 1.2;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.26));
 }
 
 @media screen and (max-width: 600px){

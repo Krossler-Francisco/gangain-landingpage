@@ -1,7 +1,7 @@
 .reputacion {
     max-width: 880px;
     margin: 0 auto;
-    padding: 2rem 1rem 1rem 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
     text-align: center;
     border-radius: 0.5em;
   }
@@ -24,10 +24,17 @@
     color: rgb(50, 50, 50);
     font-family: "rubik";
     font-size: 1.4rem;
-    max-width: 800px;
-    margin: 0 auto 4rem auto;
+    font-weight: 400;
+    max-width: 700px;
+    margin: .5rem auto .5rem auto;
     text-align: center;
     font-size: 1.4rem;
+  }
+
+  .reputacion span{
+    color: rgb(58, 122, 65);
+    color: rgb(50, 50, 50);
+    font-weight: 500;
   }
 
   .reputacion-icons{
@@ -35,6 +42,7 @@
     justify-content: center;
     align-items: center;
     gap: 4rem;
+    margin-bottom: 2rem;
   }
 
   .reputacion-icons figure{
@@ -57,5 +65,23 @@
     .reputacion-icons{
       flex-direction: column;
       gap: 0;
+    }
+    
+    .reputacion-icons figure{
+      margin: 0px;
+    }
+
+    .reputacion h1{
+      font-size: 3rem;
+      margin-block: 0rem 1rem;
+    }
+
+    .reputacion h2{
+      font-size: 1.4rem;
+    }
+
+    .reputacion p{
+      margin-top: 1rem;
+      font-size: 1.2rem;
     }
   }

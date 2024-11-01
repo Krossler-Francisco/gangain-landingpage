@@ -1,4 +1,5 @@
 import './App.css'
+import FAQ from './Faq.jsx'
 import Destaques from './pages/Destaques.jsx'
 import Footer from './pages/Footer.jsx'
 import Gallery from './pages/Gallery.jsx'

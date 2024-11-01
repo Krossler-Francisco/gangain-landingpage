@@ -24,7 +24,8 @@ const Reputacion = () => {
                     <h2>Mercado Envios Flex</h2>
                 </figure>
             </div>
-            <p>Como Mercado Líder Platinum, garantizamos la máxima confianza en cada compra. Con nuestros envíos FULL y Flex, tus productos llegan a tiempo, asegurando una experiencia de compra rápida y eficiente.</p>
+            <p>Somos <span>Mercado Líder Platinum</span>, garantizamos la máxima confianza en cada compra.</p>
+            <p>Con nuestros envíos <span>FULL</span> y <span>Flex</span>, tus productos llegan a tiempo, asegurando una experiencia de compra rápida y eficiente.</p>
         </section>
     )
 };
