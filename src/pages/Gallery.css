@@ -1,57 +1,125 @@
-  .images-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 0.5em;
-  }
-  
-  .images-container h1 {
-    margin-top: 20px;
-    color: #848d62;
-    font-family: "home-font";
-    font-size: 4rem;
-  }
-  
-  .gallery {
-    display: grid;
-    margin: 3em 0;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-template-rows: 1fr;
-    grid-gap: 1.5em;
-    grid-auto-flow: dense;
-  }
-  
-  .gallery figure {
-    display: flex;
-    margin: 0;
-  }
-  
-  .gallery img {
-    aspect-ratio: 1/1.5;
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 0.2em;
-    flex: 1;
-    max-width: 100%;
-    object-fit: cover;
-    transition: 0.3s ease;
-  }
+.gallery-container {
+  background: url("https://static.vecteezy.com/system/resources/thumbnails/028/790/475/original/simple-white-luxury-ornamental-rotating-mandala-line-looping-animation-for-background-video.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
 
-  .gallery img:hover{
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.522);
-    
-  }
+.images-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.5em;
+}
+
+.images-container h1 {
+  margin-top: 20px;
+  color: #848d62;
+  font-family: "home-font";
+  font-size: 4rem;
+}
+
+.gallery {
+  display: grid;
+  margin: 3em 0 0em 0;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-rows: 1fr;
+  grid-gap: 1em;
+  grid-auto-flow: dense;
+}
+
+.gallery figure {
+  display: flex;
+  position: relative;
+  margin: 0;
+}
+
+.gallery img {
+  aspect-ratio: 1/1.15;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 0.2em;
+  flex: 1;
+  max-width: 100%;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.gallery img:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.522);
+  cursor: pointer;
+}
+
+.openicon {
+  filter: opacity(.8);
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.img-modal {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(0px);
+  background-color: rgba(0, 0, 0, 0.0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transition: .3s ease;
+}
+
+.img-container-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9); /* Escala inicial para animación */
+  opacity: 0; /* Opacidad inicial para animación */
+  border-radius: 0.2em;
+  max-width: 90%;
+  transition: 0.2s ease-in-out; /* Transición para animación */
+}
+
+.img-modal.show .img-container-modal {
+  transform: translate(-50%, -50%) scale(1); /* Escala final para mostrar */
+  opacity: 1; /* Opacidad final para mostrar */
+}
+
+.img-modal.show{
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.img-modal img {
+  object-fit: cover;
+  max-height: 700px;
+  max-width: 100%;
+  aspect-ratio: none;
+}
+
+.img-modal img:hover {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.522);
+}
 
 @media (max-width: 768px) {
+  .gallery-container {
+    background: url("https://th.bing.com/th/id/OIP.Shiots3bDtIbgjCfsQRSHgHaKe?w=664&h=939&rs=1&pid=ImgDetMain");
+  }
 
-  .gallery img{
+  .gallery img {
     aspect-ratio: 3/4;
-    max-width: 100%;
     object-fit: cover;
   }
 
-  .gallery img:hover{
-    scale: 1;
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-gap: .2em;
   }
-
 }
