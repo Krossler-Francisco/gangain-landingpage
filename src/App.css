@@ -1,6 +1,7 @@
 @font-face{
   font-family: home-font;
   src: url(./Roxborough.ttf);
+  font-display: swap;
   }
 
 * {
