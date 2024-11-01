@@ -72,9 +72,9 @@ const Navbar = () => {
             <nav className={menuOpen ? "show" : ""}>
                 <Logo />
                 <ul>
-                    <li><a className="links" href="./">Home</a></li>
-                    <li><a className="links" href="#products">Productos</a></li>
-                    <li><a className="links" href="https://www.mercadolibre.com.ar/pagina/gangain">Tienda Oficial</a></li>
+                    <li><a onClick={toggleMenu} className="links" href="./">Home</a></li>
+                    <li><a onClick={toggleMenu} className="links" href="#products">Productos</a></li>
+                    <li><a onClick={toggleMenu} className="links" href="https://www.mercadolibre.com.ar/pagina/gangain">Tienda Oficial</a></li>
                     <li><button onClick={toggleModel} className="links no-btn">Contacto</button></li>
                 </ul>
             </nav>
