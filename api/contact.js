@@ -31,6 +31,7 @@ export default async function handler(req, res) {
     await connectDB();
 
     if (req.method === 'POST') {
+        // Lidar com requisição POST
         try {
             const { name, email, message } = req.body;
 
@@ -45,7 +46,16 @@ export default async function handler(req, res) {
             res.status(201).json({ message: 'Mensagem enviada corretamente.' });
         } catch (error) {
             console.error('Erro ao enviar mensagem:', error);
-            res.status(500).json({ message: 'Erro ao enviar o mensagem.' });
+            res.status(500).json({ message: 'Erro ao enviar a mensagem.' });
+        }
+    } else if (req.method === 'GET') {
+        // Lidar com requisição GET
+        try {
+            const contacts = await Contact.find({}); // Busca todos os contatos
+            res.status(200).json(contacts); // Retorna os contatos encontrados
+        } catch (error) {
+            console.error('Erro ao recuperar mensagens:', error);
+            res.status(500).json({ message: 'Erro ao recuperar mensagens.' });
         }
     } else {
         res.status(405).json({ message: 'Método não permitido' });
