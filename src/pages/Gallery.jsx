@@ -45,6 +45,7 @@ const Gallery = () => {
                   e.stopPropagation();
                   openModal(image.img);
                 }}
+                loading="lazy"
                 src={image.img} 
                 alt={`Imagen ${id}`} 
               />
@@ -58,7 +59,7 @@ const Gallery = () => {
             >
               <div className="img-container-modal">
                 <CloseIcon closeModalImg={closeModal} />
-                <img src={selectedImage} alt="Imagen ampliada" />
+                <img src={selectedImage} loading="lazy" alt="Imagen ampliada" />
               </div>
             </div>
           )}
