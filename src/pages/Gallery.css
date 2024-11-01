@@ -101,6 +101,11 @@
 }
 
 @media (max-width: 768px) {
+
+  .images-container h1 {
+    font-size: 3rem;
+  }
+
   .gallery img {
     aspect-ratio: 3/4;
   }
