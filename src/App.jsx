@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Destaques from './pages/Destaques.jsx';
 import Gallery from './pages/Gallery.jsx';
 import Header from './pages/Header.jsx';
