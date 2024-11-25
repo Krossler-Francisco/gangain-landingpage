@@ -14,7 +14,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<><Gallery /><Reputacion /><Destaques /><Links /></>} />
-        <Route path="/test" element={<><Links /></>} />
+        <Route path="/test" element={<Links />} />
         <Route path="/contact" element={<ContactList />} />
       </Routes>
       <a href="https://wa.me/5591134732744" aria-label="Contactar por whatsapp" target="_blank" rel="noopener noreferrer">
