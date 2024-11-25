@@ -1,0 +1,82 @@
+/* ContactList.css */
+
+/* Estilo geral para o container */
+.api_container {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título */
+  .api_container  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para a lista */
+  .api_container  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Cada item da lista */
+  .api_container  li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  /* Estilo ao passar o mouse sobre um item */
+  .api_container  li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para o título de cada contato */
+  .api_container  li div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .api_container  li div p {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  .api_container  li div p strong {
+    color: #222;
+  }
+  
+  /* Detalhes da mensagem aberta */
+  .api_container  li div + div {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .api_container  li div + div p {
+    margin: 5px 0;
+  }
+  
+  /* Separador entre itens */
+  .api_container  hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+  }
+  
