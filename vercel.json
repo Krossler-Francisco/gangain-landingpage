@@ -19,11 +19,8 @@
       "dest": "/api/$1"
     },
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "^(?!/api/).*",
-      "dest": "/index.html"
+      "src": "^(?!/api/).*$",
+      "dest": "/dist/index.html"
     }
   ]
 }
