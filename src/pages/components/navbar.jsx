@@ -75,6 +75,7 @@ const Navbar = () => {
                 <ul>
                     <li><Link onClick={toggleMenu} className="links" to="/">Home</Link></li>
                     <li><Link onClick={toggleMenu} className="links" to="/store">Productos</Link></li>
+                    <li><Link onClick={toggleMenu} className="links" to="/messages">Messages</Link></li>
                     <li><a onClick={toggleMenu} className="links" href="https://www.mercadolibre.com.ar/pagina/gangain" target="_blank">Mercado Libre</a></li>
                     <li><button onClick={toggleModel} className="links no-btn">Contacto</button></li>
                 </ul>
