@@ -68,3 +68,32 @@
     justify-content: center;
     grid-auto-flow: dense;
 }
+
+.carrito_card {
+    position: fixed; 
+    top: 170px; 
+    right: 20px; 
+    background-color: white; 
+    padding: 20px 60px; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    border-radius: 10px;
+}
+
+  .carrito_card p {
+    margin: 5px 0; /* Espacio entre los párrafos */
+  }
+
+  .carrito_card button {
+    background-color: #ff9900; /* Botón verde */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .carrito_card button:hover {
+    background-color: #218838; /* Botón más oscuro al pasar el mouse */
+  }

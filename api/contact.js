@@ -7,13 +7,11 @@ const connectDB = async () => {
     if (mongoose.connection.readyState >= 1) return;
 
     try {
-        await mongoose.connect(MONGODB_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(MONGODB_URI);
+        console.log("Conectado ao MongoDB");
     } catch (error) {
-        console.error('Erro ao conectar ao MongoDB:', error);
-        throw new Error('Erro ao conectar ao MongoDB');
+        console.error("Erro ao conectar ao MongoDB:", error);
+        throw new Error("Erro ao conectar ao MongoDB");
     }
 };
 

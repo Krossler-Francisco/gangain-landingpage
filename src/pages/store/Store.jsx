@@ -27,8 +27,16 @@ function Store() {
     setFilteredProducts(uniqueProducts); // Actualiza los productos filtrados sin duplicados
   };
 
+  // HACER CARRITO QUE FUNCIONE Y PROXIMA PAGINA PIDIENDO DATOS DEL CLIENTE 1
+  // HACER TODO EL BACKEND DE PRODUCTOS, PEDIDOS, ETC. 2
+
   return (
     <>
+      <div className="carrito_card">
+        <p>Carrito</p>
+        <p>Total: $0.00</p>
+        <button>Comprar</button>
+      </div>
       <div className="navbar_store">
         <Navbar />
       </div>
@@ -38,9 +46,18 @@ function Store() {
             Filtrar por tamaño:
             <select onChange={(e) => setSelectedSize(e.target.value)} value={selectedSize}>
               <option value="">Todos</option>
+              <option value="20cm">20cm</option>
+              <option value="25cm">25cm</option>
               <option value="30cm">30cm</option>
+              <option value="35cm">35cm</option>
               <option value="40cm">40cm</option>
+              <option value="45cm">45cm</option>
               <option value="50cm">50cm</option>
+              <option value="55cm">55cm</option>
+              <option value="60cm">60cm</option>
+              <option value="65cm">65cm</option>
+              <option value="70cm">70cm</option>
+              <option value="75cm">75cm</option>
             </select>
           </label>
 
