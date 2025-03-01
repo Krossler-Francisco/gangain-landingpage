@@ -1,0 +1,70 @@
+.navbar_store {
+    background-color: rgb(25, 24, 24);
+    padding-bottom: 2rem;
+}
+
+.store_container{
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    max-width: 1280px;
+    margin: 5rem auto;
+}
+
+.store_submenu {
+    background-color: rgb(35, 35, 35);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    translate: 0 -2rem;
+}
+
+.store_submenu label {
+    color: white;
+    font-size: 1rem;
+}
+
+.store_submenu select,
+.store_submenu input {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    color: black;
+}
+
+.search-button {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #cc7a00;
+}
+
+.no-results {
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+
+.products-container {
+    padding: 2rem 1rem 2rem 2.6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    grid-auto-flow: dense;
+}

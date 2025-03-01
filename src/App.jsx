@@ -7,13 +7,15 @@ import Links from './pages/Links.jsx';
 import Reputacion from './pages/components/Reputacion.jsx';
 import Whatsapp from './pages/components/WhatsappIcon.jsx';
 import ContactList from './pages/components/ContactList.jsx';
+import Store from './pages/store/Store.jsx';
 
 function App() {
   return (
     <Router>
-      <Header />
+      
       <Routes>
-        <Route path="/" element={<><Gallery /><Reputacion /><Destaques /><Links /></>} />
+        <Route path="/" element={<><Header /><Gallery /><Reputacion /><Destaques /><Links /></>} />
+        <Route path="/store" element={<Store />} />
         <Route path="/test" element={<Links />} />
         <Route path="/contact" element={<ContactList />} />
       </Routes>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Navbar from './components/navbar'
 
 function Header() {
@@ -13,7 +14,7 @@ function Header() {
       <p>
       Más de 20 años importando artículos de distintas regiones y culturas del mundo, llevando belleza y armonía a nuestros clientes.
       </p>
-      <button className='btn' ><a href="https://www.mercadolibre.com.ar/pagina/gangain" target='_blank'>VISITAR TIENDA</a></button>
+      <button className='btn' ><Link to='/store'>VISITAR TIENDA</Link></button>
     </section>
   </header>
 </>

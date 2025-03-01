@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Logo from "./Logo";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -72,9 +73,9 @@ const Navbar = () => {
             <nav className={menuOpen ? "show" : ""}>
                 <Logo />
                 <ul>
-                    <li><a onClick={toggleMenu} className="links" href="./">Home</a></li>
-                    <li><a onClick={toggleMenu} className="links" href="#products">Productos</a></li>
-                    <li><a onClick={toggleMenu} className="links" href="https://www.mercadolibre.com.ar/pagina/gangain">Tienda Oficial</a></li>
+                    <li><Link onClick={toggleMenu} className="links" to="/">Home</Link></li>
+                    <li><Link onClick={toggleMenu} className="links" to="/store">Productos</Link></li>
+                    <li><a onClick={toggleMenu} className="links" href="https://www.mercadolibre.com.ar/pagina/gangain" target="_blank">Mercado Libre</a></li>
                     <li><button onClick={toggleModel} className="links no-btn">Contacto</button></li>
                 </ul>
             </nav>
