@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/store.css";
+import "../Store.css";
 
 const ProductCard = ({ product, onAddToCart }) => {
   return (
