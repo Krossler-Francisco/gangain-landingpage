@@ -30,6 +30,18 @@ body {
   padding-inline: 20px;
 }
 
+.banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: .8rem;
+  font-weight: 400;
+  background-color: #292929;
+  color: rgb(232, 232, 232);
+  padding-block: .4rem;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -48,7 +60,7 @@ nav {
   font-size: 2.4rem;
   letter-spacing: 4px;
   font-weight: 100;
-  color: #fffd47;
+  color: white;
 }
 
 .navbar ul {
@@ -210,7 +222,7 @@ nav .active-nav {
   cursor: pointer;
   font-family: "Rubik";
   font-size: 18px;
-  border: 1px solid #fffd47;
+  border: 1px solid white;
   color: #ddd;
   text-decoration: none;
   transition: 0.2s ease;
