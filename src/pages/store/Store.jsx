@@ -5,19 +5,32 @@ import products from "./components/products.json";
 import "./Store.css";
 
 function Store() {
+  // Estados temporales para los filtros
+  const [tempSelectedSize, setTempSelectedSize] = useState("");
+  const [tempMaxPrice, setTempMaxPrice] = useState("");
+  const [tempSearchTerm, setTempSearchTerm] = useState("");
+
+  // Estados efectivos (se actualizan solo al hacer clic en "Filtrar")
   const [selectedSize, setSelectedSize] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  // Función para aplicar los filtros
   const handleSearch = () => {
-    return products.filter((product) =>
-      (selectedSize ? product.size === selectedSize : true) &&
-      (maxPrice ? product.price <= parseFloat(maxPrice) : true) &&
-      (searchTerm ? product.name.toLowerCase().includes(searchTerm.toLowerCase()) : true)
-    );
+    setSelectedSize(tempSelectedSize);
+    setMaxPrice(tempMaxPrice);
+    setSearchTerm(tempSearchTerm);
   };
+
+  // Función para obtener los productos filtrados
+  const filteredProducts = products.filter((product) =>
+    (selectedSize ? product.size === selectedSize : true) &&
+    (maxPrice ? product.price <= parseFloat(maxPrice) : true) &&
+    (searchTerm ? product.name.toLowerCase().includes(searchTerm.toLowerCase()) : true)
+  );
 
   const addToCart = (product) => {
     setCart([...cart, product]);
@@ -31,7 +44,10 @@ function Store() {
 
   return (
     <>
-      <Navbar />
+      <div className="navbar-store">
+        <Navbar />
+      </div>
+
       <div className="store-container">
         <div className={`cart-sidebar ${isCartOpen ? "open" : ""}`}>
           <button className="close-cart" onClick={() => setIsCartOpen(false)}>✖</button>
@@ -42,7 +58,7 @@ function Store() {
                 {cart.map((item, index) => (
                   <li key={index}>
                     {item.name} - ${item.price}
-                    <button onClick={() => removeFromCart(item.id)}>🗑</button>
+                    <button className="frank-remove-btn" onClick={() => removeFromCart(item.id)}>🗑</button>
                   </li>
                 ))}
               </ul>
@@ -56,25 +72,37 @@ function Store() {
 
         <div className="store-content">
           <div className="filters">
-            <input type="text" placeholder="Buscar producto..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-            <select value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
-              <option value="">Todos los tamaños</option>
-              {[20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75].map((size) => (
-                <option key={size} value={`${size}cm`}>{size}cm</option>
-              ))}
-            </select>
-            <input type="number" placeholder="Precio máximo" value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} />
-            <button className="filter-btn" onClick={handleSearch}>Filtrar</button>
+            <div className="filters-content">
+              <input
+                type="text"
+                placeholder="Buscar producto..."
+                value={tempSearchTerm}
+                onChange={(e) => setTempSearchTerm(e.target.value)}
+              />
+              <select value={tempSelectedSize} onChange={(e) => setTempSelectedSize(e.target.value)}>
+                <option value="">Todos los tamaños</option>
+                {[20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75].map((size) => (
+                  <option key={size} value={`${size}cm`}>{size}cm</option>
+                ))}
+              </select>
+              <input
+                type="number"
+                placeholder="Precio máximo"
+                value={tempMaxPrice}
+                onChange={(e) => setTempMaxPrice(e.target.value)}
+              />
+              <button className="filter-btn" onClick={handleSearch}>Filtrar</button>
+            </div>
           </div>
 
           <div className="products">
-            {handleSearch().map((product) => (
+            {filteredProducts.map((product) => (
               <ProductCard key={product.id} product={product} onAddToCart={addToCart} />
             ))}
           </div>
         </div>
 
-        <button className="cart-toggle" onClick={() => setIsCartOpen(true)}>🛒</button>
+        <button className="cart-toggle" onClick={() => setIsCartOpen(!isCartOpen)}>🛒</button>
       </div>
     </>
   );
