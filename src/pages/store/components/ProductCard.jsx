@@ -1,24 +1,13 @@
-import { useState } from "react";
-import "./ProductCard.css";
+import React from "react";
+import "../styles/store.css";
 
-const ProductCard = ({ product, onAddToCart, onMoreInfo }) => {
+const ProductCard = ({ product, onAddToCart }) => {
   return (
     <div className="product-card">
-      <img
-        src={product.image}
-        alt={product.name}
-        className="product-image"
-      />
-      <h2 className="product-name">{product.name}</h2>
-      <p className="product-price">${product.price}</p>
-      <div className="button-container">
-        <button className="add-to-cart" onClick={() => onAddToCart(product)}>
-          Agregar al carrito
-        </button>
-        <button className="more-info" onClick={() => onMoreInfo(product)}>
-          Más info
-        </button>
-      </div>
+      <h3>{product.name}</h3>
+      <p>Precio: ${product.price}</p>
+      <p>Tamaño: {product.size}</p>
+      <button onClick={() => onAddToCart(product)}>Añadir al Carrito</button>
     </div>
   );
 };

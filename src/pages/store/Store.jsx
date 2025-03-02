@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar";
 import ProductCard from "./components/ProductCard";
 import products from "./components/products.json";
-import "./store.css";
+import "./Store.css";
 
 function Store() {
   const [selectedSize, setSelectedSize] = useState("");
@@ -33,7 +33,6 @@ function Store() {
     <>
       <Navbar />
       <div className="store-container">
-        {/* Sidebar Carrito */}
         <div className={`cart-sidebar ${isCartOpen ? "open" : ""}`}>
           <button className="close-cart" onClick={() => setIsCartOpen(false)}>✖</button>
           <h2>Carrito</h2>
@@ -55,7 +54,6 @@ function Store() {
           )}
         </div>
 
-        {/* Contenido Principal */}
         <div className="store-content">
           <div className="filters">
             <input type="text" placeholder="Buscar producto..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
