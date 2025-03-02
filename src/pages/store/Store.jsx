@@ -9,33 +9,55 @@ function Store() {
   const [maxPrice, setMaxPrice] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(products);
+  const [cart, setCart] = useState([]);
 
   const handleSearch = () => {
-    // Filtrar los productos solo cuando se hace clic en el botón "Buscar"
     const newFilteredProducts = products.filter((product) => {
       return (
-        (selectedSize ? product.size === selectedSize : true) && // Filtra por tamaño
-        (maxPrice ? product.price <= parseFloat(maxPrice) : true) && // Filtra por precio máximo
-        (searchTerm ? product.name.toLowerCase().includes(searchTerm.toLowerCase()) : true) // Filtra por nombre
+        (selectedSize ? product.size === selectedSize : true) &&
+        (maxPrice ? product.price <= parseFloat(maxPrice) : true) &&
+        (searchTerm ? product.name.toLowerCase().includes(searchTerm.toLowerCase()) : true)
       );
     });
-
-    // Para eliminar duplicados, podemos usar un Set con el id de los productos
     const uniqueProducts = Array.from(new Set(newFilteredProducts.map(a => a.id)))
       .map(id => newFilteredProducts.find(a => a.id === id));
-
-    setFilteredProducts(uniqueProducts); // Actualiza los productos filtrados sin duplicados
+    setFilteredProducts(uniqueProducts);
   };
 
-  // HACER CARRITO QUE FUNCIONE Y PROXIMA PAGINA PIDIENDO DATOS DEL CLIENTE 1
-  // HACER TODO EL BACKEND DE PRODUCTOS, PEDIDOS, ETC. 2
+  const addToCart = (product) => {
+    setCart((prevCart) => {
+      const existingProduct = prevCart.find((item) => item.id === product.id);
+      if (existingProduct) {
+        return prevCart.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      }
+      return [...prevCart, { ...product, quantity: 1 }];
+    });
+  };
+
+  const removeFromCart = (productId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+  };
+
+  const getTotalPrice = () => {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+  };
 
   return (
     <>
       <div className="carrito_card">
         <p>Carrito</p>
-        <p>Total: $0.00</p>
-        <button>Comprar</button>
+        <p>Total: ${getTotalPrice()}</p>
+        <ul>
+          {cart.map((item) => (
+            <li key={item.id}>
+              {item.name} x{item.quantity} - ${item.price * item.quantity}
+              <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
+            </li>
+          ))}
+        </ul>
+        <button disabled={cart.length === 0}>Comprar</button>
       </div>
       <div className="navbar_store">
         <Navbar />
@@ -46,18 +68,9 @@ function Store() {
             Filtrar por tamaño:
             <select onChange={(e) => setSelectedSize(e.target.value)} value={selectedSize}>
               <option value="">Todos</option>
-              <option value="20cm">20cm</option>
-              <option value="25cm">25cm</option>
-              <option value="30cm">30cm</option>
-              <option value="35cm">35cm</option>
-              <option value="40cm">40cm</option>
-              <option value="45cm">45cm</option>
-              <option value="50cm">50cm</option>
-              <option value="55cm">55cm</option>
-              <option value="60cm">60cm</option>
-              <option value="65cm">65cm</option>
-              <option value="70cm">70cm</option>
-              <option value="75cm">75cm</option>
+              {["20cm", "25cm", "30cm", "35cm", "40cm", "45cm", "50cm", "55cm", "60cm", "65cm", "70cm", "75cm"].map((size) => (
+                <option key={size} value={size}>{size}</option>
+              ))}
             </select>
           </label>
 
@@ -90,8 +103,7 @@ function Store() {
               <ProductCard
                 key={product.id}
                 product={product}
-                onAddToCart={(p) => console.log("Añadido al carrito:", p)}
-                onMoreInfo={(p) => console.log("Más información sobre:", p)}
+                onAddToCart={() => addToCart(product)}
               />
             ))
           ) : (
