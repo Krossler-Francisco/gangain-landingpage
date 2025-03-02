@@ -1,116 +1,83 @@
 import { useState } from "react";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import ProductCard from "./components/ProductCard";
-import "./Store.css";
 import products from "./components/products.json";
+import "./store.css";
 
 function Store() {
   const [selectedSize, setSelectedSize] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState(products);
   const [cart, setCart] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleSearch = () => {
-    const newFilteredProducts = products.filter((product) => {
-      return (
-        (selectedSize ? product.size === selectedSize : true) &&
-        (maxPrice ? product.price <= parseFloat(maxPrice) : true) &&
-        (searchTerm ? product.name.toLowerCase().includes(searchTerm.toLowerCase()) : true)
-      );
-    });
-    const uniqueProducts = Array.from(new Set(newFilteredProducts.map(a => a.id)))
-      .map(id => newFilteredProducts.find(a => a.id === id));
-    setFilteredProducts(uniqueProducts);
+    return products.filter((product) =>
+      (selectedSize ? product.size === selectedSize : true) &&
+      (maxPrice ? product.price <= parseFloat(maxPrice) : true) &&
+      (searchTerm ? product.name.toLowerCase().includes(searchTerm.toLowerCase()) : true)
+    );
   };
 
   const addToCart = (product) => {
-    setCart((prevCart) => {
-      const existingProduct = prevCart.find((item) => item.id === product.id);
-      if (existingProduct) {
-        return prevCart.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      }
-      return [...prevCart, { ...product, quantity: 1 }];
-    });
+    setCart([...cart, product]);
   };
 
-  const removeFromCart = (productId) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+  const removeFromCart = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
   };
 
-  const getTotalPrice = () => {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
-  };
+  const totalPrice = cart.reduce((acc, item) => acc + item.price, 0).toFixed(2);
 
   return (
     <>
-      <div className="carrito_card">
-        <p>Carrito</p>
-        <p>Total: ${getTotalPrice()}</p>
-        <ul>
-          {cart.map((item) => (
-            <li key={item.id}>
-              {item.name} x{item.quantity} - ${item.price * item.quantity}
-              <button onClick={() => removeFromCart(item.id)}>Eliminar</button>
-            </li>
-          ))}
-        </ul>
-        <button disabled={cart.length === 0}>Comprar</button>
-      </div>
-      <div className="navbar_store">
-        <Navbar />
-      </div>
-      <section className="store_container">
-        <div className="store_submenu">
-          <label>
-            Filtrar por tamaño:
-            <select onChange={(e) => setSelectedSize(e.target.value)} value={selectedSize}>
-              <option value="">Todos</option>
-              {["20cm", "25cm", "30cm", "35cm", "40cm", "45cm", "50cm", "55cm", "60cm", "65cm", "70cm", "75cm"].map((size) => (
-                <option key={size} value={size}>{size}</option>
-              ))}
-            </select>
-          </label>
-
-          <label>
-            Precio máximo:
-            <input
-              type="number"
-              placeholder="Ingrese un valor"
-              onChange={(e) => setMaxPrice(e.target.value)}
-              value={maxPrice}
-            />
-          </label>
-
-          <label>
-            Buscar por nombre:
-            <input
-              type="text"
-              placeholder="Ingrese nombre"
-              onChange={(e) => setSearchTerm(e.target.value)}
-              value={searchTerm}
-            />
-          </label>
-
-          <button onClick={handleSearch} className="search-button">Buscar</button>
+      <Navbar />
+      <div className="store-container">
+        {/* Sidebar Carrito */}
+        <div className={`cart-sidebar ${isCartOpen ? "open" : ""}`}>
+          <button className="close-cart" onClick={() => setIsCartOpen(false)}>✖</button>
+          <h2>Carrito</h2>
+          {cart.length > 0 ? (
+            <>
+              <ul>
+                {cart.map((item, index) => (
+                  <li key={index}>
+                    {item.name} - ${item.price}
+                    <button onClick={() => removeFromCart(item.id)}>🗑</button>
+                  </li>
+                ))}
+              </ul>
+              <p>Total: ${totalPrice}</p>
+              <button className="checkout-btn">Comprar</button>
+            </>
+          ) : (
+            <p>El carrito está vacío</p>
+          )}
         </div>
 
-        <section className="products-container">
-          {filteredProducts.length > 0 ? (
-            filteredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onAddToCart={() => addToCart(product)}
-              />
-            ))
-          ) : (
-            <p className="no-results">No se encontraron productos.</p>
-          )}
-        </section>
-      </section>
+        {/* Contenido Principal */}
+        <div className="store-content">
+          <div className="filters">
+            <input type="text" placeholder="Buscar producto..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+            <select value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
+              <option value="">Todos los tamaños</option>
+              {[20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75].map((size) => (
+                <option key={size} value={`${size}cm`}>{size}cm</option>
+              ))}
+            </select>
+            <input type="number" placeholder="Precio máximo" value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} />
+            <button className="filter-btn" onClick={handleSearch}>Filtrar</button>
+          </div>
+
+          <div className="products">
+            {handleSearch().map((product) => (
+              <ProductCard key={product.id} product={product} onAddToCart={addToCart} />
+            ))}
+          </div>
+        </div>
+
+        <button className="cart-toggle" onClick={() => setIsCartOpen(true)}>🛒</button>
+      </div>
     </>
   );
 }

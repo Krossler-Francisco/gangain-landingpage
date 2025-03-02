@@ -1,99 +1,109 @@
-.navbar_store {
-    background-color: rgb(25, 24, 24);
-    padding-bottom: 2rem;
-}
-
-.store_container{
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    background-color: white;
-    max-width: 1280px;
-    margin: 5rem auto;
-}
-
-.store_submenu {
-    background-color: rgb(35, 35, 35);
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+/* --- Layout General --- */
+.store-container {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    gap: 20px;
+    padding: 2rem;
+  }
+  
+  /* --- Menú Lateral Carrito --- */
+  .cart-sidebar {
+    width: 300px;
+    background: white;
+    position: fixed;
+    top: 0;
+    right: -320px;
+    height: 100%;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+  }
+  
+  .cart-sidebar.open {
+    right: 0;
+  }
+  
+  .cart-sidebar h2 {
+    margin-bottom: 10px;
+  }
+  
+  .cart-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-sidebar li {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    translate: 0 -2rem;
-}
-
-.store_submenu label {
+    padding: 8px 0;
+  }
+  
+  .cart-sidebar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .close-cart {
+    background: red;
     color: white;
-    font-size: 1rem;
-}
-
-.store_submenu select,
-.store_submenu input {
-    margin-left: 0.5rem;
-    padding: 0.5rem;
+    padding: 5px 10px;
     border-radius: 5px;
-    border: none;
-    color: black;
-}
-
-.search-button {
-    background-color: #ff9900;
+    float: right;
+  }
+  
+  .checkout-btn {
+    width: 100%;
+    padding: 10px;
+    background: green;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* --- Botón Abrir Carrito --- */
+  .cart-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: orange;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+  }
+  
+  /* --- Filtros --- */
+  .filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .filters input,
+  .filters select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .filter-btn {
+    background: #ff9900;
+    color: white;
+    border: none;
+    padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.search-button:hover {
-    background-color: #cc7a00;
-}
-
-.no-results {
-    text-align: center;
-    color: white;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-}
-
-
-.products-container {
-    padding: 2rem 1rem 2rem 2.6rem;
+  }
+  
+  /* --- Productos --- */
+  .products {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    justify-content: center;
-    grid-auto-flow: dense;
-}
-
-.carrito_card {
-    position: fixed; 
-    top: 170px; 
-    right: 20px; 
-    background-color: white; 
-    padding: 20px 60px; 
-    border: 1px solid #ccc; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    z-index: 1000; 
-    border-radius: 10px;
-}
-
-  .carrito_card p {
-    margin: 5px 0; /* Espacio entre los párrafos */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
   }
-
-  .carrito_card button {
-    background-color: #ff9900; /* Botón verde */
-    color: white; /* Texto blanco */
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-
-  .carrito_card button:hover {
-    background-color: #218838; /* Botón más oscuro al pasar el mouse */
-  }
+  
