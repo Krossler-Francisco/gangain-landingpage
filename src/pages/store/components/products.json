@@ -32,6 +32,7 @@
       "name": "Bola de Papel China 50cm",
       "size": "50cm",
       "price": 9.99,
+      "sale": "-10%",
       "image": "https://shop.fetesvousmeme.fr/wp-content/uploads/2020/11/Lanterne-rouge.jpg"
     },
   {
@@ -39,28 +40,8 @@
     "name": "Bola de Papel China 40cm",
     "size": "40cm",
     "price": 7.99,
+    "sale": "-15%",
     "image": "https://http2.mlstatic.com/D_NQ_NP_807021-MLM70501588901_072023-O.webp"
-  },
-  {
-    "id": 7,
-    "name": "Bola de Papel China 50cm",
-    "size": "50cm",
-    "price": 9.99,
-    "image": "https://shop.fetesvousmeme.fr/wp-content/uploads/2020/11/Lanterne-rouge.jpg"
-  },
-  {
-    "id": 8,
-    "name": "Bola de Papel China 40cm",
-    "size": "40cm",
-    "price": 7.99,
-    "image": "https://http2.mlstatic.com/D_NQ_NP_807021-MLM70501588901_072023-O.webp"
-  },
-  {
-    "id": 9,
-    "name": "Bola de Papel China 50cm",
-    "size": "50cm",
-    "price": 9.99,
-    "image": "https://shop.fetesvousmeme.fr/wp-content/uploads/2020/11/Lanterne-rouge.jpg"
   }
 ]
   

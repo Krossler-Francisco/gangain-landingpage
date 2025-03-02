@@ -10,7 +10,7 @@ const ProductCard = ({ product, onAddToCart, onMoreInfo }) => {
         className="product-image"
       />
       <h2 className="product-name">{product.name}</h2>
-      <p className="product-price">${product.price}</p>
+      <p className="product-price">${product.price} <span className="product-sale">{product.sale}</span></p>
       <div className="button-container">
         <button className="add-to-cart" onClick={() => onAddToCart(product)}>
           Agregar al carrito
@@ -19,6 +19,7 @@ const ProductCard = ({ product, onAddToCart, onMoreInfo }) => {
           Más info
         </button>
       </div>
+      
     </div>
   );
 };
