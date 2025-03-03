@@ -1,47 +1,92 @@
 [
-    {
-      "id": 1,
-      "name": "Bola de Papel China 30cm",
-      "size": "30cm",
-      "price": 5.99,
-      "image": "./lampara.webp"
-    },
-    {
-      "id": 2,
-      "name": "Bola de Papel China 40cm",
-      "size": "40cm",
-      "price": 7.99,
-      "image": "https://http2.mlstatic.com/D_NQ_NP_807021-MLM70501588901_072023-O.webp"
-    },
-    {
-      "id": 3,
-      "name": "Bola de Papel China 50cm",
-      "size": "50cm",
-      "price": 9.99,
-      "image": "https://shop.fetesvousmeme.fr/wp-content/uploads/2020/11/Lanterne-rouge.jpg"
-    },
-    {
-      "id": 4,
-      "name": "Bola de Papel China 40cm",
-      "size": "40cm",
-      "price": 7.99,
-      "image": "https://http2.mlstatic.com/D_NQ_NP_807021-MLM70501588901_072023-O.webp"
-    },
-    {
-      "id": 5,
-      "name": "Bola de Papel China 50cm",
-      "size": "50cm",
-      "price": 9.99,
-      "sale": "-10%",
-      "image": "https://shop.fetesvousmeme.fr/wp-content/uploads/2020/11/Lanterne-rouge.jpg"
-    },
   {
-    "id": 6,
+    "id": 1,
+    "name": "Bola de Papel China 20cm",
+    "size": "20cm",
+    "price": 3000,
+    "image": "./lampara.webp"
+  },
+  {
+    "id": 2,
+    "name": "Bola de Papel China 25cm",
+    "size": "25cm",
+    "price": 3400,
+    "image": "./lampara.webp"
+  },
+  {
+    "id": 3,
+    "name": "Bola de Papel China 30cm",
+    "size": "30cm",
+    "price": 3800,
+    "image": "./lampara.webp"
+  },
+  {
+    "id": 4,
+    "name": "Bola de Papel China 35cm",
+    "size": "35cm",
+    "price": 4400,
+    "image": "./lampara.webp"
+  },
+  {
+    "id": 5,
     "name": "Bola de Papel China 40cm",
     "size": "40cm",
-    "price": 7.99,
-    "sale": "-15%",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_807021-MLM70501588901_072023-O.webp"
+    "price": 5200,
+    "image": "./lampara.webp"
+  },
+  {
+    "id": 6,
+    "name": "Bola de Papel China 45cm",
+    "size": "45cm",
+    "price": 7500,
+    "image": "./lampara.webp"
+  },
+  {
+    "id": 7,
+    "name": "Bola de Papel China 50cm",
+    "size": "50cm",
+    "price": 14000,
+    "image": "./lampara.webp",
+    "discount": 10
+  },
+  {
+    "id": 8,
+    "name": "Bola de Papel China 55cm",
+    "size": "55cm",
+    "price": 16000,
+    "image": "./lampara.webp",
+    "discount": 10
+  },
+  {
+    "id": 9,
+    "name": "Bola de Papel China 60cm",
+    "size": "60cm",
+    "price": 24000,
+    "image": "./lampara.webp"
+  },
+  {
+    "id": 10,
+    "name": "Bola de Papel China 65cm",
+    "size": "65cm",
+    "price": 30000,
+    "image": "./lampara.webp"
+  },
+  {
+    "id": 11,
+    "name": "Bola de Papel China 70cm",
+    "size": "70cm",
+    "price": 36000,
+    "image": "./lampara.webp",
+    "discount": 10,
+    "freeShipping": true
+  },
+  {
+    "id": 12,
+    "name": "Bola de Papel China 75cm",
+    "size": "75cm",
+    "price": 40000,
+    "image": "./lampara.webp",
+    "discount": 10,
+    "freeShipping": true
   }
 ]
-  

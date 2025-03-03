@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Destaques from './pages/Destaques.jsx';
 import Gallery from './pages/Gallery.jsx';
 import Header from './pages/Header.jsx';
@@ -9,6 +9,7 @@ import Whatsapp from './pages/components/WhatsappIcon.jsx';
 import ContactList from './pages/components/ContactList.jsx';
 import Store from './pages/store/Store.jsx';
 import ContactMessages from './pages/components/ContactMessages.jsx';
+import CheckoutPage from './pages/store/CheckoutPage.jsx';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<><Header /><Gallery /><Reputacion /><Destaques /><Links /></>} />
-        <Route path="/store" element={<Store />} />
+        <Route path="/store" element={<Store />}/>
+        <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/test" element={<Links />} />
         <Route path="/contact" element={<ContactList />} />
         <Route path="/messages" element={<ContactMessages />} />
