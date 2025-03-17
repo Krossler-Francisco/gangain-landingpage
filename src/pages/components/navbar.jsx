@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import Logo from "./Logo";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
+import { FiHome, FiShoppingCart, FiMessageSquare, FiShoppingBag, FiMail } from "react-icons/fi";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [showModel, setShowModel] = useState(false);
-    const [delayedShow, setDelayedShow] = useState(false); // Nueva variable de estado para la transición
+    const [delayedShow, setDelayedShow] = useState(false);
     const [activeNav, setActiveNav] = useState("home");
     const [formData, setFormData] = useState({
         name: "",
@@ -24,10 +25,10 @@ const Navbar = () => {
     const toggleModel = () => {
         if (!showModel) {
             setShowModel(true);
-            setTimeout(() => setDelayedShow(true), 100); // Añadir retraso de 100ms para mostrar el modal
+            setTimeout(() => setDelayedShow(true), 100);
         } else {
             setDelayedShow(false);
-            setTimeout(() => setShowModel(false), 300); // Asegura que el modal desaparece con la transición
+            setTimeout(() => setShowModel(false), 300);
         }
     };
 
@@ -73,11 +74,11 @@ const Navbar = () => {
             <nav className={menuOpen ? "show" : ""}>
                 <Logo />
                 <ul>
-                    <li><Link onClick={toggleMenu} className="links" to="/">Home</Link></li>
-                    <li><Link onClick={toggleMenu} className="links" to="/store">Productos</Link></li>
-                    <li><Link onClick={toggleMenu} className="links" to="/messages">Messages</Link></li>
-                    <li><a onClick={toggleMenu} className="links" href="https://www.mercadolibre.com.ar/pagina/gangain" target="_blank">Mercado Libre</a></li>
-                    <li><button onClick={toggleModel} className="links no-btn">Contacto</button></li>
+                    <li><Link onClick={toggleMenu} className="links" to="/"><FiHome /> Home</Link></li>
+                    <li><Link onClick={toggleMenu} className="links" to="/store"><FiShoppingCart /> Productos</Link></li>
+                    <li><Link onClick={toggleMenu} className="links" to="/messages"><FiMessageSquare /> Messages</Link></li>
+                    <li><a onClick={toggleMenu} className="links" href="https://www.mercadolibre.com.ar/pagina/gangain" target="_blank" rel="noopener noreferrer"><FiShoppingBag /> Mercado Libre</a></li>
+                    <li><button onClick={toggleModel} className="links no-btn"><FiMail /> Contacto</button></li>
                 </ul>
             </nav>
             {showModel && (
