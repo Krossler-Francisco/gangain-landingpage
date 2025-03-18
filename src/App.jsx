@@ -14,9 +14,6 @@ import CheckoutPage from './pages/store/CheckoutPage.jsx';
 function App() {
   return (
     <Router>
-      <div className='banner'>
-        Envio gratis a todo el país
-      </div>
       <Routes>
         <Route path="/" element={<><Header /><Gallery /><Reputacion /><Destaques /><Links /></>} />
         <Route path="/store" element={<Store />}/>
