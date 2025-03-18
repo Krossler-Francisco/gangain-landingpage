@@ -289,7 +289,7 @@ nav .active-nav {
   .menu-btn {
     display: block;
     position: absolute;
-    top: 36px;
+    top: 20px;
     right: 20px;
     cursor: pointer;
     z-index: 999;
@@ -310,10 +310,6 @@ nav .active-nav {
   .navbar ul {
     flex-direction: column;
     gap: 1.5rem;
-  }
-
-  .header-landing {
-    height: 95vh;
   }
 
   .section-landing {
