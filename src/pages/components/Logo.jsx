@@ -1,6 +1,6 @@
 const Logo = () => {
     return(
-        <h1 className="logo">/GI</h1>
+        <h1 className="logo">gangain</h1>
     )
 };
 
