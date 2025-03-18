@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
-import { FiHome, FiShoppingCart, FiMessageSquare, FiShoppingBag, FiMail } from "react-icons/fi";
+import { FiHome, FiShoppingCart, FiMessageSquare, FiShoppingBag, FiMail, FiPackage } from "react-icons/fi";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -75,8 +75,8 @@ const Navbar = () => {
                 <Logo />
                 <ul>
                     <li><Link onClick={toggleMenu} className="links" to="/"><FiHome /> Home</Link></li>
-                    <li><Link onClick={toggleMenu} className="links" to="/store"><FiShoppingCart /> Productos</Link></li>
-                    <li><Link onClick={toggleMenu} className="links" to="/messages"><FiMessageSquare /> Messages</Link></li>
+                    <li><Link onClick={toggleMenu} className="links" to="/store"><FiShoppingCart /> Nuestra Tienda</Link></li>
+                    <li><Link onClick={toggleMenu} className="links" to="/mayorista"><FiPackage /> Mayorista</Link></li>
                     <li><a onClick={toggleMenu} className="links" href="https://www.mercadolibre.com.ar/pagina/gangain" target="_blank" rel="noopener noreferrer"><FiShoppingBag /> Mercado Libre</a></li>
                     <li><button onClick={toggleModel} className="links no-btn"><FiMail /> Contacto</button></li>
                 </ul>

@@ -10,7 +10,6 @@
 
   .navbar-store{
     background-color: #333;
-    padding-bottom: 1rem;
   }
   
   /* --- Menú Lateral Carrito --- */
@@ -143,7 +142,6 @@
     cursor: pointer;
     padding: 14px;
     border-radius: 50%;
-    color: white;
     transition: .3s ease;
     z-index: 10000;
   }
