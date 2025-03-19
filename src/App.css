@@ -195,15 +195,16 @@ nav .active-nav {
   font-weight: 100;
   color: #eee;
   /*text-shadow: 1px 3px 10px rgba(255, 244, 92, 0.1);*/
-  text-shadow: 1px 3px 8px rgba(0, 0, 0, 0.3);
-  font-size: 8rem;
+  text-shadow: 1px 2px 12px rgba(0, 0, 0, 0.5);
+  font-size: 9rem;
   margin-block: 12rem 2rem;
 }
 
 .section-landing p {
   max-width: 550px;
   margin-bottom: 2rem;
-  font-size: 20px;
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.4);
+  font-size: 18px;
   color: #eee;
 }
 
