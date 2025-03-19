@@ -7,6 +7,7 @@ function Header() {
     const handleScroll = () => {
       let scrollPosition = window.scrollY;
       document.querySelector(".header-landing").style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+      document.querySelector("body").style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
     };
 
     window.addEventListener("scroll", handleScroll);

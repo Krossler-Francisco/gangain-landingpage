@@ -22,6 +22,13 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
+.btn_product{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .4rem;
+}
+
 .product-info{
   padding: 8px;
 }
