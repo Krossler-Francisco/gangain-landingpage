@@ -109,6 +109,7 @@ function Store() {
       </div>
       
       <div className="store-container">
+
         <div className={`cart-sidebar ${isCartOpen ? "open" : ""}`}>
           <button className="close-cart" onClick={() => setIsCartOpen(false)}>✖</button>
           <h2>Carrito</h2>
@@ -188,6 +189,7 @@ function Store() {
                 product={product} 
                 onAddToCart={addToCart} 
                 onMoreInfo={() => openProductDetails(product)}
+                onClickInCart={setIsCartOpen}
               />
             ))}
           </div>

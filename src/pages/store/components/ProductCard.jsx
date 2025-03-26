@@ -2,7 +2,13 @@ import { useState } from "react";
 import { FaShoppingCart, FaInfoCircle, FaTruck } from "react-icons/fa";
 import "./ProductCard.css";
 
-const ProductCard = ({ product, onAddToCart, onMoreInfo }) => {
+const ProductCard = ({ product, onAddToCart, onMoreInfo, onClickInCart }) => {
+
+  const clickOnCartConst = () => {
+    onAddToCart(product);
+    onClickInCart(true);
+  };
+
   return (
     <div className="product-card">
       <img
@@ -26,7 +32,8 @@ const ProductCard = ({ product, onAddToCart, onMoreInfo }) => {
           </p>
         )}
         <div className="button-container">
-          <button className=" btn_product add-to-cart" onClick={() => onAddToCart(product)}>
+          <button className=" btn_product add-to-cart"
+          onClick={clickOnCartConst}>
             <FaShoppingCart /> Carrito
           </button>
           <button className="btn_product more-info" onClick={() => onMoreInfo(product)}>
