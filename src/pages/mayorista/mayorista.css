@@ -32,7 +32,6 @@
     gap: 2rem;
     margin-top: 3rem;
 }
-
 .mayorista-content .options {
     width: 280px;
     height: 150px;
@@ -87,4 +86,17 @@
     to {
         opacity: 1;
     }
+}
+
+@media (max-width: 768px) {
+
+    .mayorista-options {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 0 auto;
+
+    }
+    
 }
